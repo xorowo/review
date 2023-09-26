@@ -32,7 +32,6 @@ def send_form():
             clear_form()
             st.success("Отзыв отправлен")
         else:
-            print("ERRRRRRR", response)
             st.warning("Error: {}".format(response["error"]))
 
 if not "input_phone_key" in st.session_state:
