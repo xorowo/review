@@ -7,7 +7,7 @@ def insert(dictionary):
     try:
         params = config.config('database.ini', 'postgresql')
         connect = psycopg2.connect(**params)
-        
+
         cursor = connect.cursor()
 
         query = """INSERT INTO qr_table (телефон, отзыв) VALUES (%s,%s)"""
