@@ -1,6 +1,6 @@
 import streamlit as st
-import review_validate as validate
-import review_db as db
+import services.validate_service as validate
+import services.database_service as database
 
 #Проверка валидности формы
 def is_valid_form(phone, review):
@@ -27,7 +27,7 @@ def send_form():
 
     if is_valid_form(phone, review):
         dictionary = {"phone": phone, "review": review}
-        response = db.insert(dictionary)
+        response = database.insert(dictionary)
         if response["success"]:
             clear_form()
             st.success("Отзыв отправлен")
