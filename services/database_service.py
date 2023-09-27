@@ -1,11 +1,11 @@
-import config_service as config
+import services.config_parser_service as config_parser
 import psycopg2
 
 def insert(dictionary):
     connect = None
     response = {"success": True}
     try:
-        params = config.config('database.ini', 'postgresql')
+        params = config_parser.config('database.ini', 'postgresql')
         connect = psycopg2.connect(**params)
 
         cursor = connect.cursor()
