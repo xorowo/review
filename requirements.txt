@@ -2,5 +2,3 @@ streamlit==1.27.0
 psycopg2-binary==2.9.7
 SpeechRecognition==3.10.0
 PyAudio==0.2.13
-Wave==0.0.2
-threadpoolctl==3.2.0
