@@ -19,8 +19,7 @@ if "recognitioned_text" not in st.session_state:
     st.session_state.recognitioned_text = ""
 
 def set_desc_text(text):
-    print("TEXT --->", text)
-    st.session_state.recognitioned_text = text
+    st.session_state.recognitioned_text += " " + text
     st_empty_for_area.text_area(
         "Отзыв",
         st.session_state.recognitioned_text,
