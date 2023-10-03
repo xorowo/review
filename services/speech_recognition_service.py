@@ -2,6 +2,9 @@ import speech_recognition as speech_rec
 import pyaudio
 import threading 
 
+pa = pyaudio.PyAudio()
+print("DEVICE DEFAULT:", pa.get_default_output_device_info())
+
 clouser_change_text = None
 is_recording = False
 recognizer = None

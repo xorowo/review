@@ -2,3 +2,4 @@ streamlit==1.27.0
 psycopg2-binary==2.9.7
 SpeechRecognition==3.10.0
 pyaudio
+pip==23.2.1
