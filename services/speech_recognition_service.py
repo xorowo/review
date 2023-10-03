@@ -7,7 +7,7 @@ is_recording = False
 recognizer = None
 microphone = None
 
-# sr.Microphone.list_microphone_names() 
+# speech_rec.Microphone.list_microphone_names() 
 
 def audio_hadler(audio):
     try:
@@ -29,10 +29,7 @@ def start():
     global is_recording, recognizer, microphone
     is_recording = True
     recognizer = speech_rec.Recognizer()
-    microphone = speech_rec.Microphone(device_index=6)
-    # print(microphone.device_index)
-    # print("device_index", microphone.device_index)
-    # print(speech_rec.Microphone.list_microphone_names())
+    microphone = speech_rec.Microphone()
     thread = threading.Thread(target=microphone_handler())
     thread.start()
 
