@@ -1,9 +1,5 @@
 import speech_recognition as speech_rec
-import pyaudio
 import threading 
-
-pa = pyaudio.PyAudio()
-print("DEVICE DEFAULT:", pa.get_default_output_device_info())
 
 clouser_change_text = None
 is_recording = False
@@ -23,8 +19,10 @@ def audio_hadler(audio):
 def microphone_handler():
     while is_recording:
         with microphone as source: 
+            print("MIC:", microphone, "SOURCE:", source)
             recognizer.adjust_for_ambient_noise(source) 
             audio = recognizer.listen(source) 
+            print("AUDIO DATA", audio)
             thread = threading.Thread(target=audio_hadler(audio))
             thread.start()
 
